@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://8v1qwfev7c4x"]
+
+[ext_resource type="PackedScene" uid="uid://b3soxyypr08is" path="res://scenes/character.tscn" id="2_x6i4d"]
+
+[node name="LevelTest" type="Node2D"]
+
+[node name="TileTest" type="Node2D" parent="."]
+visible = false
+
+[node name="Character" parent="." instance=ExtResource("2_x6i4d")]
+position = Vector2(384, 216)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
