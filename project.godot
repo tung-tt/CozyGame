@@ -15,6 +15,10 @@ run/main_scene="uid://8v1qwfev7c4x"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+Signalbus="*res://scripts/signalbus.gd"
+
 [input]
 
 move_right={

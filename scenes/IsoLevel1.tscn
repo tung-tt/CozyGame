@@ -1,14 +1,173 @@
-[gd_scene load_steps=2 format=3 uid="uid://8v1qwfev7c4x"]
+[gd_scene load_steps=7 format=3 uid="uid://8v1qwfev7c4x"]
 
+[ext_resource type="Script" uid="uid://bbus0c8ta0v3w" path="res://scenes/gameManager.gd" id="1_7xscq"]
 [ext_resource type="PackedScene" uid="uid://b3soxyypr08is" path="res://scenes/character.tscn" id="2_x6i4d"]
+[ext_resource type="Texture2D" uid="uid://wbx48apg8ljb" path="res://assets/tiles/placeholder_tiles/Isometric Assets 3.png" id="4_kj6hd"]
+[ext_resource type="Script" uid="uid://bmbcd2uas26oh" path="res://scenes/camera.gd" id="6_br3hh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7xscq"]
+texture = ExtResource("4_kj6hd")
+margins = Vector2i(59, 5)
+texture_region_size = Vector2i(910, 488)
+1:0/0 = 0
+2:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -244, -420, 0, 9.91736, 254.545, 435.763, 6.83013)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+0:7/0 = 0
+4:7/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_br3hh"]
+tile_shape = 1
+tile_size = Vector2i(840, 488)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_7xscq")
 
 [node name="LevelTest" type="Node2D"]
+script = ExtResource("1_7xscq")
 
-[node name="TileTest" type="Node2D" parent="."]
-visible = false
+[node name="World" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="Character" parent="." instance=ExtResource("2_x6i4d")]
+[node name="Character" parent="World" instance=ExtResource("2_x6i4d")]
 position = Vector2(384, 216)
+scale = Vector2(6, 6)
+
+[node name="Camera2D" type="Camera2D" parent="World/Character"]
+position = Vector2(-0.5, 0.25)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+script = ExtResource("6_br3hh")
+
+[node name="buildings" type="TileMapLayer" parent="World"]
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 1, 0, 0, 0, 255, 255, 253, 255, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_br3hh")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
