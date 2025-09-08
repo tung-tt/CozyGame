@@ -1,12 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://8v1qwfev7c4x"]
+[gd_scene load_steps=7 format=4 uid="uid://8v1qwfev7c4x"]
 
-[ext_resource type="Script" uid="uid://bbus0c8ta0v3w" path="res://scenes/gameManager.gd" id="1_7xscq"]
-[ext_resource type="PackedScene" uid="uid://b3soxyypr08is" path="res://scenes/character.tscn" id="2_x6i4d"]
-[ext_resource type="Texture2D" uid="uid://wbx48apg8ljb" path="res://assets/tiles/placeholder_tiles/Isometric Assets 3.png" id="4_kj6hd"]
-[ext_resource type="Script" uid="uid://bmbcd2uas26oh" path="res://scenes/camera.gd" id="6_br3hh"]
+[ext_resource type="Script" uid="uid://bbus0c8ta0v3w" path="res://scenes/gameManager.gd" id="1_5c8b3"]
+[ext_resource type="PackedScene" uid="uid://b3soxyypr08is" path="res://scenes/character.tscn" id="2_k7rc6"]
+[ext_resource type="Script" uid="uid://bmbcd2uas26oh" path="res://scenes/camera.gd" id="3_avspl"]
+[ext_resource type="Texture2D" uid="uid://wbx48apg8ljb" path="res://assets/tiles/placeholder_tiles/Isometric Assets 3.png" id="4_rwyj6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7xscq"]
-texture = ExtResource("4_kj6hd")
+texture = ExtResource("4_rwyj6")
 margins = Vector2i(59, 5)
 texture_region_size = Vector2i(910, 488)
 1:0/0 = 0
@@ -150,12 +150,12 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7xscq")
 
 [node name="LevelTest" type="Node2D"]
-script = ExtResource("1_7xscq")
+script = ExtResource("1_5c8b3")
 
 [node name="World" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Character" parent="World" instance=ExtResource("2_x6i4d")]
+[node name="Character" parent="World" instance=ExtResource("2_k7rc6")]
 position = Vector2(384, 216)
 scale = Vector2(6, 6)
 
@@ -163,10 +163,10 @@ scale = Vector2(6, 6)
 position = Vector2(-0.5, 0.25)
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
-script = ExtResource("6_br3hh")
+script = ExtResource("3_avspl")
 
 [node name="buildings" type="TileMapLayer" parent="World"]
-tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 1, 0, 0, 0, 255, 255, 253, 255, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray("AAD/////AAAAAAEAAAD///3/AAAAAAAAAAACAAAAAAAAAAEAAAACAP7/AAAAAAAAAAABAPz/AAAAAAEAAAABAPr/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_br3hh")
 
 [node name="Label" type="Label" parent="."]
