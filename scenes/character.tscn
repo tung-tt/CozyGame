@@ -1,7 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3soxyypr08is"]
+[gd_scene load_steps=16 format=3 uid="uid://b3soxyypr08is"]
 
 [ext_resource type="Script" uid="uid://ci4017r2hxlwj" path="res://scripts/character.gd" id="1_pjt0s"]
 [ext_resource type="Texture2D" uid="uid://doxkjjr371c4b" path="res://assets/characters/spritesheet_character.png" id="2_rkhd4"]
+
+[sub_resource type="Gradient" id="Gradient_5c8b3"]
+offsets = PackedFloat32Array(0, 0.75)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rkhd4"]
+gradient = SubResource("Gradient_5c8b3")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rkhd4"]
 atlas = ExtResource("2_rkhd4")
@@ -96,7 +105,14 @@ texture_filter = 1
 scale = Vector2(4, 4)
 script = ExtResource("1_pjt0s")
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.75339, 0.575045, 0.381946, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_rkhd4")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_agfs1")
 animation = &"walk_right"

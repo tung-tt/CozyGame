@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=4 uid="uid://d0tvavm3jkchc"]
 
-[ext_resource type="Texture2D" uid="uid://bxciwalctt1gx" path="res://assets/tiles/placeholder_tiles/Isometric Assets 1.png" id="1_j0jkb"]
+[ext_resource type="Texture2D" uid="uid://bxciwalctt1gx" path="res://assets/environments/tiles/placeholder_tiles/Isometric Assets 1.png" id="1_j0jkb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xbspc"]
 texture = ExtResource("1_j0jkb")
