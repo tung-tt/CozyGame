@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-var max_speed := 500;
+var max_speed := 700;
 
 func _process(delta: float) -> void:
 	

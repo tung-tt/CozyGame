@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://8v1qwfev7c4x"]
+[gd_scene load_steps=9 format=4 uid="uid://8v1qwfev7c4x"]
 
-[ext_resource type="Script" uid="uid://bbus0c8ta0v3w" path="res://scenes/gameManager.gd" id="1_5c8b3"]
+[ext_resource type="Script" uid="uid://bbus0c8ta0v3w" path="res://scripts/gameManager.gd" id="1_5c8b3"]
 [ext_resource type="PackedScene" uid="uid://b3soxyypr08is" path="res://scenes/character.tscn" id="2_k7rc6"]
-[ext_resource type="Script" uid="uid://bmbcd2uas26oh" path="res://scenes/camera.gd" id="3_avspl"]
+[ext_resource type="Script" uid="uid://bmbcd2uas26oh" path="res://scripts/camera.gd" id="3_avspl"]
 [ext_resource type="Texture2D" uid="uid://wbx48apg8ljb" path="res://assets/environments/tiles/placeholder_tiles/Isometric Assets 3.png" id="4_rwyj6"]
 [ext_resource type="TileSet" uid="uid://b0jfeujjjxl5v" path="res://textfiles/floor_grass.tres" id="5_k7rc6"]
+[ext_resource type="PackedScene" uid="uid://c2o52k4ft7442" path="res://scenes/door.tscn" id="6_avspl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7xscq"]
 texture = ExtResource("4_rwyj6")
@@ -182,3 +183,7 @@ tile_set = ExtResource("5_k7rc6")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
 color = Color(0.442287, 0.598006, 0.782096, 1)
+
+[node name="Door" parent="." instance=ExtResource("6_avspl")]
+position = Vector2(2098, 938)
+scale = Vector2(4.585, 4.585)

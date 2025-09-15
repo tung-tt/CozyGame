@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2o52k4ft7442"]
 
-[ext_resource type="Script" uid="uid://bp2hclayfebo7" path="res://scenes/door.gd" id="1_hpvv5"]
+[ext_resource type="Script" uid="uid://bp2hclayfebo7" path="res://scripts/door.gd" id="1_hpvv5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f452"]
-size = Vector2(40, 70)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hpvv5"]
+radius = 32.0
+height = 94.0
 
 [node name="Door" type="Area2D"]
 script = ExtResource("1_hpvv5")
@@ -13,7 +14,6 @@ offset_left = -20.0
 offset_top = -35.0
 offset_right = 20.0
 offset_bottom = 35.0
-color = Color(1.63645e-06, 0.812488, 0.651493, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_5f452")
+shape = SubResource("CapsuleShape2D_hpvv5")
