@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_door_entered()-> void:
-	sceneChange("res://scenes/town.tscn")
+	sceneChange("res://scenes/room_town_test.tscn")
 
 func sceneChange(sceneTo)-> void:
 	get_tree().change_scene_to_file(sceneTo)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b3soxyypr08is"]
+[gd_scene load_steps=22 format=3 uid="uid://b3soxyypr08is"]
 
 [ext_resource type="Script" uid="uid://ci4017r2hxlwj" path="res://scripts/character.gd" id="1_pjt0s"]
 [ext_resource type="Texture2D" uid="uid://doxkjjr371c4b" path="res://assets/characters/spritesheet_character.png" id="2_rkhd4"]
@@ -35,6 +35,30 @@ region = Rect2(32, 48, 16, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dp8ca"]
 atlas = ExtResource("2_rkhd4")
 region = Rect2(32, 72, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eonc"]
+atlas = ExtResource("2_rkhd4")
+region = Rect2(48, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50cep"]
+atlas = ExtResource("2_rkhd4")
+region = Rect2(48, 48, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yvht"]
+atlas = ExtResource("2_rkhd4")
+region = Rect2(48, 72, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lagn4"]
+atlas = ExtResource("2_rkhd4")
+region = Rect2(16, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8k1v"]
+atlas = ExtResource("2_rkhd4")
+region = Rect2(16, 48, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih8y6"]
+atlas = ExtResource("2_rkhd4")
+region = Rect2(16, 72, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a5ia6"]
 atlas = ExtResource("2_rkhd4")
@@ -85,6 +109,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_7eonc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50cep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yvht")
+}],
+"loop": true,
+"name": &"walk_right_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lagn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8k1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih8y6")
+}],
+"loop": true,
+"name": &"walk_right_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_a5ia6")
 }, {
 "duration": 1.0,
@@ -100,14 +152,15 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_glpr6"]
 
-[node name="Character" type="CharacterBody2D"]
+[node name="Character" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
 scale = Vector2(4, 4)
 script = ExtResource("1_pjt0s")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-0.75, 1.5)
 color = Color(0.75339, 0.575045, 0.381946, 1)
-energy = 0.5
+energy = 0.25
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_rkhd4")
 
@@ -115,10 +168,10 @@ texture = SubResource("GradientTexture2D_rkhd4")
 light_mask = 2
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_agfs1")
-animation = &"walk_right"
+animation = &"walk_down"
 autoplay = "walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9.735)
+position = Vector2(-0.75, 14.25)
 scale = Vector2(0.505, 0.3)
 shape = SubResource("CircleShape2D_glpr6")

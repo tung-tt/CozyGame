@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://do8og0vjdecpd"]
+
+[ext_resource type="Texture2D" uid="uid://wbx48apg8ljb" path="res://assets/environments/tiles/placeholder_tiles/Isometric Assets 3.png" id="1_o7xk2"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o7xk2"]
+polygon = PackedVector2Array(623, 515, 196, 287, 204, -92, 385, -397, 640, -349, 1019, -144, 1049, 271)
+
+[node name="Building" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2(0, -213.5)
+texture = ExtResource("1_o7xk2")
+region_enabled = true
+region_rect = Rect2(63.8663, 36.7183, 907.415, 953.881)
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2(-4.82951, -210.603)
+scale = Vector2(0.985795, 1.00099)
+polygon = PackedVector2Array(-428, 233.5, 2, 473, 452, 226.5, 0, 13)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(-617, -256)
+occluder = SubResource("OccluderPolygon2D_o7xk2")

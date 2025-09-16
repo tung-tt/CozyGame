@@ -1,26 +1,48 @@
 extends CharacterBody2D
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
-var max_speed := 700;
+@export var max_speed := 700;
+var last_dir := Vector2.RIGHT
+
 
 func _process(delta: float) -> void:
-	
-	var direction = Vector2((Input.get_axis("move_left", "move_right")), 
-	(Input.get_axis("move_up", "move_down"))).normalized()
-
-	position += direction * max_speed * delta
-	
+	var dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	velocity = dir * max_speed
+	if dir != Vector2.ZERO:
+		last_dir = dir.normalized()
 	move_and_slide()
-	
-	#Visuals
-	if direction.y != 0:
-		if direction.y < 0:
-			animated_sprite.animation = "walk_up"
+	_update_anim(dir)
+
+func _update_anim(dir: Vector2)-> void:
+	#Idle
+	if dir == Vector2.ZERO:
+		var idle_anim := _walk_name_from_dir(last_dir)
+		if anim.animation != idle_anim:
+			anim.animation = idle_anim
+		anim.flip_h = last_dir.x < 0
+		anim.stop()
+		anim.frame = 1
+		return
+	#moving
+	var name := _walk_name_from_dir(dir)
+	if anim.animation != name:
+		anim.animation = name
+	anim.flip_h = dir.x < 0
+	if !anim.is_playing():
+		anim.play()
+
+func _walk_name_from_dir(vector: Vector2) -> String:
+	var d := vector.normalized()
+	# Diagonal/Straight movement
+	if abs(d.y) < 0.4:
+		return "walk_right"
+	elif d.y < 0.0:
+		if abs(d.x) > 0.4:
+			return "walk_right_up"
 		else:
-			animated_sprite.animation = "walk_down"
-	elif direction.x != 0:
-		animated_sprite.animation = "walk_right"
-		if direction.x < 0:
-			animated_sprite.flip_h = true
+			return "walk_up"
+	else:
+		if abs(d.x) > 0.4:
+			return "walk_right_down"
 		else:
-			animated_sprite.flip_h = false
+			return "walk_down"
