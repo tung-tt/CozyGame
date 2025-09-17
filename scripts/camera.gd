@@ -9,7 +9,7 @@ func _ready() -> void:
 	
 	position_smoothing_enabled = true
 	position_smoothing_speed = CAMERA_SPEED
-	zoom = Vector2(0.35, 0.35)
+	zoom = Vector2(0.5, 0.5)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
